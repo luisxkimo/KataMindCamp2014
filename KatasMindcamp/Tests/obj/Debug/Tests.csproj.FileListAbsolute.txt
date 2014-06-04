@@ -1,0 +1,7 @@
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\bin\Debug\Tests.dll
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\bin\Debug\Tests.pdb
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\obj\Debug\Tests.dll
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\obj\Debug\Tests.pdb
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\bin\Debug\KatasMindcamp.exe
+C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\Tests\bin\Debug\KatasMindcamp.pdb
