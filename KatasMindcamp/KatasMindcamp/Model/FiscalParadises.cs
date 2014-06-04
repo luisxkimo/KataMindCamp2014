@@ -8,6 +8,7 @@ namespace KatasMindcamp
 		private string name;
 		private decimal tax;
 		private decimal limitAmount;
+	    private IEnumerable<Expense> expenses;
 
 		public static readonly FiscalParadises Lux = new Luxemburgo();
 		public static readonly FiscalParadises Suiz = new Suiza();

@@ -4,3 +4,9 @@ C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\KatasMindcamp
 C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\KatasMindcamp\bin\Debug\KatasMindcamp.pdb
 C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.exe
 C:\Users\Luigi\documents\visual studio 2013\Projects\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.pdb
+E:\Desarrollo\KatasMindcamp\KatasMindcamp\KatasMindcamp\bin\Debug\KatasMindcamp.exe.config
+E:\Desarrollo\KatasMindcamp\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.exe
+E:\Desarrollo\KatasMindcamp\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.pdb
+E:\Desarrollo\KatasMindcamp\KatasMindcamp\KatasMindcamp\bin\Debug\KatasMindcamp.exe
+E:\Desarrollo\KatasMindcamp\KatasMindcamp\KatasMindcamp\bin\Debug\KatasMindcamp.pdb
+E:\Desarrollo\KatasMindcamp\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.csprojResolveAssemblyReference.cache
