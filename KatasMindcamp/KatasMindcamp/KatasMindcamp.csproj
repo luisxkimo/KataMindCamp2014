@@ -41,20 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DesignByContract.cs" />
+    <Compile Include="libs\AssertionException.cs" />
+    <Compile Include="libs\Check.cs" />
+    <Compile Include="libs\DesignByContractException.cs" />
+    <Compile Include="libs\InvariantException.cs" />
+    <Compile Include="libs\PostconditionException.cs" />
+    <Compile Include="libs\PreconditionException.cs" />
     <Compile Include="Model\Expense.cs" />
     <Compile Include="Model\Diputado.cs" />
-    <Compile Include="Services\ISaveBlackMoneyService.cs" />
-    <Compile Include="Services\SaveBlackMoneyService.cs" />
     <Compile Include="ViewModels\TaxesByCountryVM.cs" />
-    <Compile Include="Model\FiscalParadises.cs" />
+    <Compile Include="Model\FiscalParadise.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
