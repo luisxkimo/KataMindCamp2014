@@ -6,53 +6,61 @@ using System.Linq;
 
 namespace Tests
 {
-	[TestClass]
-	public class DiputadoTests
-	{
-		Diputado diputadoGenerico;
-		[TestInitialize]
-		public void Setup()
-		{
-			diputadoGenerico = new Diputado("Generico", "España", "PartidoGenerico");
-		}
+    [TestClass]
+    public class DiputadoTests
+    {
+        Diputado diputadoGenerico;
+        [TestInitialize]
+        public void Setup()
+        {
+            diputadoGenerico = new Diputado("Generico", "España", "PartidoGenerico");
+        }
 
-		[TestMethod]
-		public void Can_create_correct_diputado()
-		{
-			var nuevoDiputado = new Diputado("Doraemon", "España", "GatosCosmicosUnidos");
+        [TestMethod]
+        public void Can_create_correct_diputado()
+        {
+            var nuevoDiputado = new Diputado("Doraemon", "España", "GatosCosmicosUnidos");
 
-			Assert.IsNotNull(nuevoDiputado.BlackMoneys,"Las blackMoneys no pueden ser null");
-			Assert.AreEqual(nuevoDiputado.Name,"Doraemon");
-			Assert.AreEqual(nuevoDiputado.Country, "España");
-			Assert.AreEqual(nuevoDiputado.Team, "GatosCosmicosUnidos");
-			Assert.AreEqual(nuevoDiputado.Salary, 40);
-		}
+            Assert.IsNotNull(nuevoDiputado.Expenses, "Las blackMoneys no pueden ser null");
+            Assert.AreEqual(nuevoDiputado.Name, "Doraemon");
+            Assert.AreEqual(nuevoDiputado.Country, "España");
+            Assert.AreEqual(nuevoDiputado.Team, "GatosCosmicosUnidos");
+            Assert.AreEqual(nuevoDiputado.Salary, 40);
+        }
 
-		[TestMethod]
-		public void Can_Add_BlackMoney()
-		{
-			diputadoGenerico.AddBlackMoney(Expense.Tips);
+        [TestMethod]
+        public void Can_Add_Expense()
+        {
+            diputadoGenerico.AddExpense(Expense.Tips);
 
-			Assert.AreEqual(diputadoGenerico.BlackMoneys.Count,1);
-			Assert.IsTrue(diputadoGenerico.BlackMoneys.Contains(Expense.Tips));
-			Assert.AreEqual((int)diputadoGenerico.BlackMoneys.Single(), (int)Expense.Tips);
-		}
+            Assert.AreEqual(diputadoGenerico.Expenses.Count, 1);
+            Assert.IsTrue(diputadoGenerico.Expenses.Contains(Expense.Tips));
+        }
 
-		[TestMethod]
-		public void Can_change_base_salary()
-		{
-			diputadoGenerico.ChangeSalary(30);
-			Assert.AreEqual(diputadoGenerico.Salary, 30);
-		}
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException),
+        "Se ha intentado añadir una dieta ya existente")]
+        public void Add_existing_expense_throws_ArgumentException()
+        {
+            diputadoGenerico.AddExpense(Expense.Tips);
+            diputadoGenerico.AddExpense(Expense.Tips);
+        }
 
-		[TestMethod]
-		public void Can_get_taxes()
-		{
-			var taxes = diputadoGenerico.GetDiscounts();
+        [TestMethod]
+        public void Can_change_base_salary()
+        {
+            diputadoGenerico.ChangeSalary(30);
+            Assert.AreEqual(diputadoGenerico.Salary, 30);
+        }
 
-			Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadises.Lux.Name));
-			Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadises.Suiz.Name));
-			Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadises.Baham.Name));
-		}
-	}
+        [TestMethod]
+        public void Can_get_taxes()
+        {
+            var taxes = diputadoGenerico.GetDiscounts();
+
+            Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadise.Lux.Name));
+            Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadise.Suiz.Name));
+            Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadise.Baham.Name));
+        }
+    }
 }
