@@ -1,0 +1,3 @@
+C:\Users\LUISANTONIO\Documents\KataMindCamp2014\KatasMindcamp\KatasMindcamp\bin\Debug\KatasMindcamp.exe.config
+C:\Users\LUISANTONIO\Documents\KataMindCamp2014\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.exe
+C:\Users\LUISANTONIO\Documents\KataMindCamp2014\KatasMindcamp\KatasMindcamp\obj\Debug\KatasMindcamp.pdb
