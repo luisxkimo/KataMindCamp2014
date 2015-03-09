@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;DBC_CHECK_ALL</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -49,17 +49,16 @@
     <Compile Include="libs\PreconditionException.cs" />
     <Compile Include="Model\Expense.cs" />
     <Compile Include="Model\Diputado.cs" />
+    <Compile Include="Services\TaxesCalculatorService.cs" />
     <Compile Include="ViewModels\TaxesByCountryVM.cs" />
-    <Compile Include="Model\FiscalParadise.cs" />
+    <Compile Include="Model\FiscalParadiseBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

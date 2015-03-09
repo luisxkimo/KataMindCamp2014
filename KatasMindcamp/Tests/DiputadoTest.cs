@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using KatasMindcamp;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Tests
@@ -53,14 +52,6 @@ namespace Tests
             Assert.AreEqual(diputadoGenerico.Salary, 30);
         }
 
-        [TestMethod]
-        public void Can_get_taxes()
-        {
-            var taxes = diputadoGenerico.GetDiscounts();
-
-            Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadise.Lux.Name));
-            Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadise.Suiz.Name));
-            Assert.IsNotNull(taxes.Single(x => x.Country == FiscalParadise.Baham.Name));
-        }
+        
     }
 }

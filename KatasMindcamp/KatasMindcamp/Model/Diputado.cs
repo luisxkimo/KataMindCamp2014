@@ -22,11 +22,11 @@ namespace KatasMindcamp
             Check.Require(team != String.Empty);
 
             this.name = name;
-            this.salary = 40;
+            salary = 40;
             this.team = team;
             this.country = country;
-            this._expenses = new List<Expense>();
-            fiscalParadises = new List<FiscalParadise>();
+            _expenses = new List<Expense>();
+            fiscalParadises = new List<FiscalParadiseBase>();
 
         }
 
@@ -35,7 +35,7 @@ namespace KatasMindcamp
         public string Country { get { return country; } }
         public string Team { get { return team; } }
         public List<Expense> Expenses { get { return _expenses; } }
-        public IList<FiscalParadise> fiscalParadises;
+        public IList<FiscalParadiseBase> fiscalParadises;
 
         public void ChangeSalary(int salary)
         {
@@ -48,47 +48,23 @@ namespace KatasMindcamp
             Check.Require(expense != null);
             if (_expenses.Contains(expense))
                 throw new ArgumentException("La dieta que intenta dar de alta ya la tiene adjudicada.");
-            else
-            {
-                _expenses.Add(expense);
-            }
+            _expenses.Add(expense);
         }
 
-        public List<TaxesByCountryVM> GetDiscounts()
-        {
-            var sumDietas = _expenses.Sum(x => (int)x);
-            List<TaxesByCountryVM> taxes = new List<TaxesByCountryVM>();
 
-            var luxDiscount = FiscalParadise.Lux.CalculateTaxes(sumDietas);
-            var bahamasDiscount = FiscalParadise.Baham.CalculateTaxes(sumDietas);
-            var suizaDiscount = FiscalParadise.Suiz.CalculateTaxes(sumDietas);
-
-            taxes.Add(luxDiscount);
-            taxes.Add(bahamasDiscount);
-            taxes.Add(suizaDiscount);
-
-            return taxes;
-        }
-
-        public IEnumerable<FiscalParadise> GetFiscalParadises()
+        public IEnumerable<FiscalParadiseBase> GetFiscalParadises()
         {
             return fiscalParadises;
         }
 
-        public void AddExpenseToFiscalParadise(Expense expense, FiscalParadise fiscalParadise)
+        public void AddExpenseToFiscalParadise(Expense expense, FiscalParadiseBase fiscalParadiseBase)
         {
             Check.Require(_expenses.Contains(expense));
 
-            if (!fiscalParadises.Contains(fiscalParadise))
-            {
-                fiscalParadises.Add(fiscalParadise);
-                fiscalParadise.AddExpense(name, expense);
-            }
-            else
-            {
-                fiscalParadise.AddExpense(name, expense);
-            }
-
+            if (!fiscalParadises.Contains(fiscalParadiseBase))
+                fiscalParadises.Add(fiscalParadiseBase);
+            
+			fiscalParadiseBase.AddExpense(name, expense);
 
         }
     }
