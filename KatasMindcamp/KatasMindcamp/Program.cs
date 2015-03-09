@@ -17,7 +17,7 @@ namespace KatasMindcamp
 			Console.WriteLine("Nombre: {0}", diputado.Name);
 			Console.WriteLine("País: {0}", diputado.Country);
 			Console.WriteLine("Partido: {0}", diputado.Team);
-			Console.WriteLine("---------------------------------------------");
+			Console.WriteLine("******************************************");
 			Console.WriteLine("Dietas: \n");
 			foreach (var expense in diputado.Expenses)
 			{
