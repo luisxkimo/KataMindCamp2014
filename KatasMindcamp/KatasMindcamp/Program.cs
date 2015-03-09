@@ -23,7 +23,7 @@ namespace KatasMindcamp
 			{
 				Console.WriteLine(expense + ", Quantity: " + (int)expense);
 			}
-			Console.WriteLine("*****************************************");
+			Console.WriteLine("999999999999999999999999999999999");
 
 			Console.WriteLine("Total de dietas: {0} \n\r", diputado.Expenses.Sum(x => (int)x));
 			diputado.AddExpenseToFiscalParadise(Expense.President,FiscalParadiseBase.Lux);
