@@ -12,7 +12,7 @@ namespace KatasMindcamp
         private int salary;
         private string country;
         private string team;
-        private List<Expense> _expenses;
+        private HashSet<Expense> _expenses;
 
 
         public Diputado(string name, string country, string team)
@@ -25,7 +25,7 @@ namespace KatasMindcamp
             salary = 40;
             this.team = team;
             this.country = country;
-            _expenses = new List<Expense>();
+            _expenses = new HashSet<Expense>();
             fiscalParadises = new List<FiscalParadiseBase>();
 
         }
@@ -34,7 +34,7 @@ namespace KatasMindcamp
         public int Salary { get { return salary; } }
         public string Country { get { return country; } }
         public string Team { get { return team; } }
-        public List<Expense> Expenses { get { return _expenses; } }
+        public HashSet<Expense> Expenses { get { return _expenses; } }
         public IList<FiscalParadiseBase> fiscalParadises;
 
         public void ChangeSalary(int salary)
@@ -61,9 +61,6 @@ namespace KatasMindcamp
         {
             Check.Require(_expenses.Contains(expense));
 
-            if (!fiscalParadises.Contains(fiscalParadiseBase))
-                fiscalParadises.Add(fiscalParadiseBase);
-            
 			fiscalParadiseBase.AddExpense(name, expense);
 
         }

@@ -18,6 +18,10 @@ namespace KatasMindcamp
 		public static readonly FiscalParadiseBase Suiz = new Suiza();
 		public static readonly FiscalParadiseBase Baham = new Bahamas();
 
+        public string Name { get { return name; } }
+        public decimal Tax { get { return tax; } }
+        public decimal LimitAmount { get { return limitAmount; } }
+
 		private FiscalParadiseBase(string name, decimal tax, decimal limitAmount)
 		{
 			Check.Require(name != String.Empty);
@@ -28,9 +32,6 @@ namespace KatasMindcamp
 			expensesForDiputado = new Dictionary<Expense, string>();
 		}
 
-		public string Name { get { return name; } }
-		public decimal Tax { get { return tax; } }
-		public decimal LimitAmount { get { return limitAmount; } }
 
 		public IEnumerable<Expense> GetExpenses(string diputado)
 		{
@@ -53,6 +54,8 @@ namespace KatasMindcamp
 				 */
 				throw new NotImplementedException();
 				//expensesForDiputado.Add(expense, diputado);
+
+               
 			}
 			catch (ArgumentException ex)
 			{
